@@ -6,7 +6,8 @@ public class HighscoreManager {
     private ArrayList<Score> scores;
 
     // The name of the file where the highscores will be saved
-    private static final String HIGHSCORE_FILE = "/Users/deveshdayal/Desktop/highscoresfina.dat";
+    private static final String HIGHSCORE_FILE = "/Users/deveshdayal/Desktop/highscores.dat";
+    //made a typo with the filename, but for some reason, commenting about it seems more reasonable thatn correcting it. Sigh. Fixed.
 
     //Initialising an in and outputStream for working with the file
     ObjectOutputStream outputStream = null;
@@ -58,6 +59,7 @@ public class HighscoreManager {
             outputStream.writeObject(scores);
         } catch (FileNotFoundException e) {
             System.out.println("[Update] FNF Error: " + e.getMessage() + ",the program will try and make a new file");
+            //Hah, try.
         } catch (IOException e) {
             System.out.println("[Update] IO Error: " + e.getMessage());
         } finally {
